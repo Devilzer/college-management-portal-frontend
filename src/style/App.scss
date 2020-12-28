@@ -42,6 +42,7 @@ body {
           text-align: center;
           align-content: center;
           .s-btn {
+            user-select: none;
             width: 45%;
             margin: auto;
             margin-top: 20px;
@@ -56,7 +57,6 @@ body {
             background-color: #e8dcdb;
           }
           .s-btn:hover {
-            user-select: none;
             color: brown;
             cursor: pointer;
             background-color: #e8dcdb;
@@ -75,6 +75,63 @@ body {
       .input-container {
         height: 100%;
         width: 47.5%;
+        color: #4a4b46;
+        .input-heading {
+          background-color: transparent;
+          margin-top: 50px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          .s-btn {
+            margin: 0;
+            padding: 10px;
+            border-radius: 25px;
+            transition: ease-in-out 0.25s;
+          }
+          .s-btn:hover {
+            color: brown;
+            cursor: pointer;
+            background-color: #e8dcdb;
+          }
+          .selected {
+            color: brown;
+            background-color: #e8dcdb;
+          }
+        }
+        .input-feild {
+          margin-top: 35px;
+          form {
+            display: flex;
+            flex-direction: column;
+            input {
+              color: #4a4b46;
+              height: 25px;
+              font-size: 18px;
+              margin: auto;
+              outline: none;
+              width: 80%;
+              margin-bottom: 15px;
+              border: none;
+              border-bottom: 2px solid #36454f;
+            }
+            button {
+              color: #4a4b46;
+              background-color: transparent;
+              font-size: 18px;
+              margin: auto;
+              margin-top: 10px;
+              outline: none;
+              width: 50%;
+              height: 30px;
+              border-radius: 7.5px;
+            }
+            button:hover {
+              background-color: #e8dcdb;
+              cursor: pointer;
+              color: brown;
+            }
+          }
+        }
       }
     }
   }
