@@ -3,6 +3,12 @@ import React,{useState} from 'react';
 function Access() {
     const [user,setUser]=useState("");
     const [access,setAccess]=useState("signin");
+    const [invalue,setInvalue]=useState({
+        email :"",password:""
+    });
+    const [upvalue,setUpvalue]=useState({
+        name :"",email :"",password:""
+    });
     var warning;
     var studentBtn;
     var teacherBtn;
@@ -24,6 +30,18 @@ function Access() {
       };
     const handelSubmit =(e)=>{
         e.preventDefault();
+        if(access==="signin"){
+            console.log(invalue);
+            setInvalue({
+                email :"",password:""
+            });
+        }
+        else{
+            console.log(upvalue);
+            setUpvalue({
+                name :"",email :"",password:""
+            });
+        }
 
     };
     
@@ -39,8 +57,8 @@ function Access() {
     </div>;
         inputFeilds=<div className="input-feild">
         <form onSubmit={handelSubmit}>
-            <input type="email" placeholder="Email" required/>
-            <input type="password" placeholder="Password" required/>
+            <input type="email" value={invalue.email} onChange={(e)=>setInvalue({...invalue,email:e.target.value})} placeholder="Email" required/>
+            <input type="password" value={invalue.password} onChange={(e)=>setInvalue({...invalue,password:e.target.value})} placeholder="Password" required/>
             <button>Sign-In</button>
         </form>
         </div>;
@@ -57,9 +75,9 @@ function Access() {
         </div>;
         inputFeilds=<div className="input-feild">
             <form onSubmit={handelSubmit}>
-                <input type="text" placeholder="Name" required/>
-                <input type="email" placeholder="Email" required/>
-                <input type="password" placeholder="Password" required/>
+                <input type="text" value={upvalue.name} onChange={(e)=>setUpvalue({...upvalue,name:e.target.value})} placeholder="Name" required/>
+                <input type="email" value={upvalue.email} onChange={(e)=>setUpvalue({...upvalue,email:e.target.value})} placeholder="Email" required/>
+                <input type="password" value={upvalue.password} onChange={(e)=>setUpvalue({...upvalue,password:e.target.value})} placeholder="Password" required/>
                 <button>Sign-Up</button>
             </form>
             </div>;
