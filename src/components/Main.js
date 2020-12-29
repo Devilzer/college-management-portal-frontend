@@ -4,11 +4,14 @@ import Dashboard from "./Dashboard";
 import { useDispatch, useSelector } from "react-redux";
 import { setMainMenu } from "../redux/ui/uiActions";
 import { logoutUser } from "../redux/user/userActions";
+import {getAllAssignments} from "../redux/assignments/assignmentActions"
 
 function Main() {
     const state = useSelector(state=>state);
     const dispatch = useDispatch();
     
+    useEffect(()=>dispatch(getAllAssignments()),[dispatch]);
+
     var button ;
     var subContainer;
     if(state.ui.mainMenu==="dashboard"){

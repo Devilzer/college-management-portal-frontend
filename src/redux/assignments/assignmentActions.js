@@ -9,3 +9,12 @@ export const createAssignment = (value)=> async(dispatch)=>{
         console.log(error);
     }
 };
+export const getAllAssignments = ()=> async(dispatch)=>{
+    try {
+        const {data} = await axios.get("/assignment/getall");
+        console.log(data);
+        dispatch({type : "SET_ALL_ASSIGNMENT",payload : data.assignments});
+    } catch (error) {
+        console.log(error);
+    }
+}

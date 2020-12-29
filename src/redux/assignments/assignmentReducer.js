@@ -8,8 +8,12 @@ const reducer = (state=initialState, action)=>{
     switch (action.type) {
         case "CREATE_ASSIGNMENT":
             return state;
-    
-        default:
+        case "SET_ALL_ASSIGNMENT":
+            return{
+                ...state,
+                assignments : action.payload
+            };
+        default: 
             return state;
     }
 };
