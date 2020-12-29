@@ -24,3 +24,8 @@ export const setEdit = ()=>{
         type: "SET_EDIT"
     };
 };
+export const setEditDone = ()=>{
+    return{
+        type: "SET_EDIT_DONE"
+    };
+};

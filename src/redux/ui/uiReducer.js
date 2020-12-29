@@ -28,6 +28,11 @@ const reducer = (state=initialState,action)=>{
                 ...state,
                 editable : true
             }
+        case "SET_EDIT_DONE" :
+            return{
+                ...state,
+                editable : false
+            }
         default:
             return state;
     }

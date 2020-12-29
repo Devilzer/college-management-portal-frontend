@@ -14,7 +14,7 @@ const reducer = (state = userState, action)=>{
                 userType : action.payload.userType,
                 name : action.payload.name,
                 email : action.payload.email,
-                password:action.payload.email
+                password:action.payload.password
             };
             console.log(newState);
             return newState;

@@ -1,6 +1,7 @@
 const initialState =  {
     assignments : [],
-    submittedAssignments : []
+    submittedAssignments : [],
+    submissions : []
 };
 
 const reducer = (state=initialState, action)=>{

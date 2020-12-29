@@ -30,3 +30,12 @@ export const logoutUser = ()=>{
         type : "REMOVE_USER"
     };
 };
+
+export const editUser = (value) => async(dispatch)=>{
+        try {
+            const {data} = await axios.post("/user/edit",value);
+            dispatch({type:"SET_USER",payload : data.user});
+        } catch (error) {
+            console.log(error);
+        }
+};
