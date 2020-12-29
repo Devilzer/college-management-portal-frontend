@@ -1,5 +1,3 @@
-import reducer from "../user/userReducer";
-
 const initialState =  {
     assignments : [],
     submittedAssignments : []
@@ -7,11 +5,12 @@ const initialState =  {
 
 const reducer = (state=initialState, action)=>{
     switch (action.type) {
-        case value:
-            
-            break;
+        case "CREATE_ASSIGNMENT":
+            return state;
     
         default:
             return state;
     }
-}
+};
+
+export default reducer;
