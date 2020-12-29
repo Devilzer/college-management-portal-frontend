@@ -1,4 +1,5 @@
 import React from 'react'
+import Assignment from "./Assignment";
 
 function Dashboard() {
     return (
@@ -10,7 +11,11 @@ function Dashboard() {
                 <h2 className="sm-text">
                  Submitted Assignments
                 </h2>
-            </div> 
+            </div>
+            <div className="sub-container">
+                <Assignment/>
+                
+            </div>
         </div>
     )
 }

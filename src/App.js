@@ -14,8 +14,8 @@ function App() {
   }
   return ( 
       <div className="App">
-      {/* {page} */}
-      <Main/>
+      {page}
+      {/* <Main/> */}
     </div>
   );
 }
