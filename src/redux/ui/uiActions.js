@@ -7,9 +7,15 @@ export const setMainMenu = (text)=>{
     };
 };
 
-export const setDashMenu = (text)=>{
+export const setTeacherMenu = (text)=>{
     return{
-        type:"SET_DASHMENU",
+        type:"SET_TEACHER_MENU",
+        payload:text
+    };
+};
+export const setStudentMenu = (text)=>{
+    return{
+        type:"SET_STUDENT_MENU",
         payload:text
     };
 };

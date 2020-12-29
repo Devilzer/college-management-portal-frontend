@@ -248,6 +248,10 @@ body {
             cursor: pointer;
             background-color: #e8dcdb;
           }
+          .selected {
+            color: brown;
+            background-color: #e8dcdb;
+          }
         }
         .sub-container {
           height: 100%;
@@ -323,7 +327,7 @@ body {
           }
           .add-assignments {
             height: 80%;
-            width: 60%;
+            width: 55%;
             margin: auto;
             border-radius: 10px;
             border: 2px solid #ccc;

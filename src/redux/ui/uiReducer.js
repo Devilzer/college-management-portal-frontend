@@ -1,6 +1,7 @@
 const initialState = {
     mainMenu:"dashboard",
-    dashMenu:"assignment",
+    studentMenu:"assignments", //submittedAssignments
+    teacherMenu:"submissions", //addAssignment
     editable :false
 };
 
@@ -12,10 +13,15 @@ const reducer = (state=initialState,action)=>{
                 ...state,
                 mainMenu:action.payload
             };
-        case "SET_DASHMENU":
+        case "SET_TEACHER_MENU":
             return{
                 ...state,
-                dashMenu:action.payload
+                teacherMenu:action.payload
+            };
+        case "SET_STUDENT_MENU":
+            return{
+                ...state,
+                studentMenu:action.payload
             };
         case "SET_EDIT" :
             return{
