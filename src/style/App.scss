@@ -324,7 +324,63 @@ body {
           .add-assignments {
             height: 80%;
             width: 60%;
-            background-color: yellow;
+            margin: auto;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            input {
+              font-size: 20px;
+              width: 40%;
+              margin: auto;
+              margin-top: 25px;
+              margin-bottom: 10px;
+              outline: none;
+              border: none;
+              border-bottom: 2px solid #36454f;
+            }
+            .deadline {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-evenly;
+              h3 {
+                text-align: end;
+                width: 30%;
+                margin-left: 25px;
+                margin-top: 25px;
+                margin-bottom: 10px;
+              }
+            }
+            textarea {
+              outline: none;
+              width: 90%;
+              margin: auto;
+              margin-top: 15px;
+              margin-bottom: 5px;
+              height: 150px;
+              padding: 12px 20px;
+              box-sizing: border-box;
+              border: none;
+              border-bottom: 2px solid #36454f;
+              border-radius: 4px;
+              background-color: transparent;
+              font-size: 16px;
+              resize: none;
+            }
+            button {
+              width: 40%;
+              margin: auto;
+              font-size: 20px;
+              padding: 5px;
+              margin-top: 20px;
+              outline: none;
+              background-color: transparent;
+              border-radius: 25px;
+            }
+            button:hover {
+              background-color: #e8dcdb;
+              cursor: pointer;
+            }
           }
         }
         .sub-container::-webkit-scrollbar {
