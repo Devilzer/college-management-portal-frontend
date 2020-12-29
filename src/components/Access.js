@@ -1,7 +1,12 @@
 import React,{useState} from 'react';
-
+import { useDispatch } from "react-redux";
+import { createUser } from "../redux/user/userActions";
+import { loginUser } from "../redux/user/userActions";
 function Access() {
+    const dispatch = useDispatch();
+    //user type
     const [user,setUser]=useState("");
+    //access typr
     const [access,setAccess]=useState("signin");
     const [invalue,setInvalue]=useState({
         email :"",password:""
@@ -28,16 +33,27 @@ function Access() {
     const setSignup = ()=>{
         setAccess("signup");  
       };
+    //from submit handler
     const handelSubmit =(e)=>{
         e.preventDefault();
+        if(user===""){
+            return;
+        }
         if(access==="signin"){
-            console.log(invalue);
+            
+            dispatch(loginUser(invalue));
             setInvalue({
                 email :"",password:""
             });
         }
         else{
-            console.log(upvalue);
+            let value = {
+                userType : user,
+                name : upvalue.name,
+                email: upvalue.email,
+                password : upvalue.password 
+            }
+            dispatch(createUser(value));
             setUpvalue({
                 name :"",email :"",password:""
             });

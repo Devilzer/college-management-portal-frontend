@@ -1,14 +1,4 @@
-export const setUser = (text)=>{
-    return {
-        type : "SET_USER",
-        payload:text
-    };
-};
-export const setLoggedin = ()=>{
-    return {
-        type :"SET_LOGGEDIN"
-    };
-};
+
 
 export const setMainMenu = (text)=>{
     return {
@@ -21,5 +11,10 @@ export const setDashMenu = (text)=>{
     return{
         type:"SET_DASHMENU",
         payload:text
+    };
+};
+export const setEdit = ()=>{
+    return{
+        type: "SET_EDIT"
     };
 };

@@ -6,11 +6,11 @@ import { useSelector } from "react-redux";
 function App() {
   const state = useSelector(state=>state);
   var page;
-  if(state.ui.loggedIn){
-    page = <Main/>
+  if(state.user.name===""){
+    page=<Access/>
   }
   else{
-    page=<Access/>
+    page = <Main/>
   }
   return ( 
       <div className="App">

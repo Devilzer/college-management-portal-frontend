@@ -1,8 +1,39 @@
 import React from 'react';
 import Profile from "./Profile";
 import Dashboard from "./Dashboard";
+import { useDispatch, useSelector } from "react-redux";
+import { setMainMenu } from "../redux/ui/uiActions";
+import { logoutUser } from "../redux/user/userActions";
 
 function Main() {
+    const state = useSelector(state=>state);
+    const dispatch = useDispatch();
+    var button ;
+    var subContainer;
+    if(state.ui.mainMenu==="dashboard"){
+        subContainer=<Dashboard/>;
+        button = <div className="menu">
+        <div className="mh">Menu</div>
+        <h2 className="btn selected">
+        <i className="fas fa-user-alt"></i> &nbsp;Dashboard
+        </h2>
+        <h2 className="btn" onClick={()=>dispatch(setMainMenu("profile"))}>
+        <i className="fas fa-columns"></i> &nbsp;Profile
+        </h2>
+        </div>;
+    }
+    else if(state.ui.mainMenu==="profile"){
+        subContainer=<Profile/>
+        button = <div className="menu">
+        <div className="mh">Menu</div>
+        <h2 className="btn " onClick={()=>dispatch(setMainMenu("dashboard"))}>
+        <i className="fas fa-user-alt"></i> &nbsp;Dashboard
+        </h2>
+        <h2 className="btn selected">
+        <i className="fas fa-columns"></i> &nbsp;Profile
+        </h2>
+        </div>;
+    }
     return (
         <div className="main">
             <div className="container-one">
@@ -17,21 +48,12 @@ function Main() {
                 <div className="bdr">
 
                 </div>
-                <div className="menu">
-                    <div className="mh">Menu</div>
-                    <h2 className="btn">
-                    <i className="fas fa-user-alt"></i> &nbsp;Dashboard
-                    </h2>
-                    <h2 className="btn">
-                    <i className="fas fa-columns"></i> &nbsp;Profile
-                    </h2>
-                </div>
-                <h2 className="sign-out">
+                {button}
+                <h2 className="sign-out" onClick={()=>dispatch(logoutUser())}>
                 <i className="fas fa-sign-out-alt"></i> &nbsp; Sign Out
                 </h2>
             </div>
-            {/* <Profile/> */}
-            <Dashboard/>
+            {subContainer}
 
         </div>
     );

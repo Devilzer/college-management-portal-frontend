@@ -200,6 +200,10 @@ body {
             cursor: pointer;
             color: brown;
           }
+          .selected {
+            background-color: #e8dcdb;
+            color: brown;
+          }
         }
         .sign-out {
           color: #4a4b46;
@@ -296,6 +300,9 @@ body {
               }
             }
           }
+          .assignment:hover {
+            cursor: pointer;
+          }
           .green {
             background-image: linear-gradient(to right, #afea96, #64be47);
             -webkit-box-shadow: 0px 13px 21px 5px rgba(157, 228, 128, 0.62);
@@ -313,6 +320,11 @@ body {
             -webkit-box-shadow: 0px 13px 21px 5px rgba(239, 156, 72, 0.5);
             -moz-box-shadow: 0px 13px 21px 5px rgba(239, 156, 72, 0.5);
             box-shadow: 0px 13px 21px 5px rgba(239, 156, 72, 0.5);
+          }
+          .add-assignments {
+            height: 80%;
+            width: 60%;
+            background-color: yellow;
           }
         }
         .sub-container::-webkit-scrollbar {

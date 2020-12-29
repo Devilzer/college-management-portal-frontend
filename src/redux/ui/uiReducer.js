@@ -1,23 +1,12 @@
 const initialState = {
-    loggedIn : false,
-    user : "",
     mainMenu:"dashboard",
     dashMenu:"assignment",
-    assignment:""
+    editable :false
 };
 
 const reducer = (state=initialState,action)=>{
     switch (action.type) {
-        case "SET_USER":
-            return{
-                ...state,
-                user : action.payload
-            };
-        case "SET_LOGGEDIN":
-            return{
-                ...state,
-                loggedIn : true
-            };
+        
         case "SET_MAINMENU":
             return{
                 ...state,
@@ -28,6 +17,11 @@ const reducer = (state=initialState,action)=>{
                 ...state,
                 dashMenu:action.payload
             };
+        case "SET_EDIT" :
+            return{
+                ...state,
+                editable : true
+            }
         default:
             return state;
     }
