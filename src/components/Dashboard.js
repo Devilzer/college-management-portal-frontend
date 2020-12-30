@@ -5,6 +5,7 @@ import StudentMenu from "./StudentMenu";
 import TeacherMenu from "./TeacherMenu";
 import SubmissionUpload from "./SubmissionUpload";
 import SubittedAssignment from "./SubittedAssignment";
+import Submissions from "./Submissions";
 import { useDispatch, useSelector } from "react-redux";
 
 function Dashboard() {
@@ -61,7 +62,15 @@ function Dashboard() {
         }
         else{
             subContainer = <div className="sub-container">
-                fhghjk
+                {
+                    state.assignment.submissions.submissions.map((submission,index)=>(
+                        <Submissions
+                            submission={submission}
+                            index ={index}
+                            key={index}
+                        />
+                    ))   
+                }
             </div>
         }
     }
