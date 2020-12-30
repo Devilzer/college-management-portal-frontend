@@ -1,28 +1,49 @@
 import React from 'react';
+import moment from "moment";
+import { setCurrentAssignment, setAssignmentPage } from "../redux/ui/uiActions";
+import { useDispatch } from "react-redux";
 
-function Assignment() {
+function Assignment(props) {
+    const dispatch = useDispatch();
+    const today = moment().format("YYYY-MM-DD");
+    var classes;
+    if(props.assignment.deadline <today){
+        classes="assignment orange"
+    }
+    else{
+        classes="assignment blue"
+    }
+    const handleClick = ()=>{
+        if(props.assignment.deadline <today){
+            return;
+        }
+        else{
+            console.log(props.assignment);
+            dispatch(setAssignmentPage());
+            dispatch(setCurrentAssignment(props.assignment));
+        }
+    }
     return (
-        <div className="assignment orange">
-            <h2 className="title">
-                title.
-            </h2>
-            <p className="description">
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
-            </p>
-            <div className="details">
-            <p className="deadline">
-                <span>
-                Deadline :-
-                </span>&nbsp;
-                23/03/1998
-            </p>
-            <p className="teacher">
-                <span>
-                    By :-
-                </span>&nbsp;Deepak Jena
-            </p>
-            </div>
-            
+        <div className={classes} onClick={handleClick}>
+        <h2 className="title">
+            {props.assignment.title}
+        </h2>
+        <p className="description">
+            {props.assignment.description}
+        </p>
+        <div className="details">
+        <p className="deadline">
+            <span>
+            Deadline :-
+            </span>&nbsp;
+            {props.assignment.deadline}
+        </p>
+        <p className="teacher">
+            <span>
+                By :-
+            </span>&nbsp;{props.assignment.teacher}
+        </p>
+        </div>
         </div>
     )
 }

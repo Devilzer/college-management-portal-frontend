@@ -263,6 +263,7 @@ body {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-evenly;
+
           .assignment {
             color: whitesmoke;
             border-radius: 10px;
@@ -384,6 +385,57 @@ body {
             button:hover {
               background-color: #e8dcdb;
               cursor: pointer;
+            }
+          }
+        }
+        .submission {
+          height: 100%;
+          width: 100%;
+          margin: auto;
+          // background-color: ;
+          -webkit-box-shadow: 0px 5px 10px 2.5px rgba(171, 171, 171, 1);
+          -moz-box-shadow: 0px 5px 10px 2.5px rgba(171, 171, 171, 1);
+          box-shadow: 0px 5px 10px 2.5px rgba(171, 171, 171, 1);
+          .container {
+            height: 80%;
+            width: 55%;
+            margin: auto;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            h1 {
+              text-align: center;
+              margin-bottom: 10px;
+            }
+            p {
+              width: 90%;
+              height: 150px;
+              margin: auto;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              overflow-y: scroll;
+            }
+            .details {
+              margin-left: 25px;
+              margin-top: 0px;
+            }
+            .file-input {
+              width: 40%;
+              margin: auto;
+            }
+            button {
+              font-size: 15px;
+              width: 40%;
+              margin: auto;
+              padding: 5px;
+              outline: none;
+              background-color: transparent;
+            }
+            button:hover {
+              cursor: pointer;
+              color: brown;
+              background-color: #e8dcdb;
             }
           }
         }

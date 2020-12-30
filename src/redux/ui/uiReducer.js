@@ -2,7 +2,9 @@ const initialState = {
     mainMenu:"dashboard",
     studentMenu:"assignments", //submittedAssignments
     teacherMenu:"submissions", //addAssignment
-    editable :false
+    editable :false,
+    currentAssignment: {},
+    assignmentPage : false
 };
 
 const reducer = (state=initialState,action)=>{
@@ -32,6 +34,21 @@ const reducer = (state=initialState,action)=>{
             return{
                 ...state,
                 editable : false
+            }
+        case "SET_CUR_ASSIGNMENT" :
+            return{
+                ...state,
+                currentAssignment:action.payload
+            };
+        case "SET_ASSIGNMENT_PAGE":
+            return {
+                ...state,
+                assignmentPage : true
+            };
+        case "RESET_ASSIGNMENT_PAGE" :
+            return{
+                ...state,
+                assignmentPage : false
             }
         default:
             return state;

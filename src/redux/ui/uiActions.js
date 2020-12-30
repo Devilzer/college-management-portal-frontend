@@ -29,3 +29,21 @@ export const setEditDone = ()=>{
         type: "SET_EDIT_DONE"
     };
 };
+
+export const setCurrentAssignment = (assignment)=>{
+    return{
+        type : "SET_CUR_ASSIGNMENT",
+        payload : assignment
+    }
+};
+export const setAssignmentPage = ()=>{
+    return{
+        type:"SET_ASSIGNMENT_PAGE"
+    };
+};
+
+export const resetAssignmentPage = ()=>{
+    return{
+        type:"RESET_ASSIGNMENT_PAGE"
+    };
+};

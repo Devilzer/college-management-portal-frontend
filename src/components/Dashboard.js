@@ -3,6 +3,7 @@ import Assignment from "./Assignment";
 import AddAssignment from "./AddAssignment";
 import StudentMenu from "./StudentMenu";
 import TeacherMenu from "./TeacherMenu";
+import SubmissionUpload from "./SubmissionUpload";
 import { useDispatch, useSelector } from "react-redux";
 
 function Dashboard() {
@@ -16,14 +17,44 @@ function Dashboard() {
     else if(state.user.userType==="teacher"){
         subMenu = <TeacherMenu/>;
     }
+    if(state.user.userType==="student"){
+        if(state.ui.studentMenu==="assignments"){
+            if(state.ui.assignmentPage){
+                subContainer = <SubmissionUpload/>
+            }
+            else{
+                subContainer = <div className="sub-container">
+                {
+                    state.assignment.assignments.map((assignment,index)=>(
+                        <Assignment
+                            assignment = {assignment}
+                            index={index}
+                            key={index}
+                        />
+                    ))
+                }
+                </div>;
+                }
+            }
+            
+        // else{
+
+        // }
+    }
+    else if(state.user.userType==="teacher"){
+        if(state.ui.teacherMenu==="addAssignment"){
+            subContainer =<div className="sub-container">
+                <AddAssignment/>
+            </div>;
+             
+        }
+    }
     return (
         <div className="container-two">
             {subMenu}
-            <div className="sub-container">
-                <Assignment/>
+            {subContainer}
+                {/* <Assignment/> */}
                 {/* <AddAssignment/> */}
-                
-            </div>
         </div>
     )
 }
