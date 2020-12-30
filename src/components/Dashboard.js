@@ -6,9 +6,12 @@ import TeacherMenu from "./TeacherMenu";
 import SubmissionUpload from "./SubmissionUpload";
 import SubittedAssignment from "./SubittedAssignment";
 import Submissions from "./Submissions";
+import SubmissionView from "./SubmissionView";
 import { useDispatch, useSelector } from "react-redux";
 
+
 function Dashboard() {
+    
     const state = useSelector(state=>state);
     const dispatch = useDispatch();
     var subMenu;
@@ -61,7 +64,13 @@ function Dashboard() {
             </div>;  
         }
         else{
-            subContainer = <div className="sub-container">
+            if(state.ui.assignmentPage){
+                subContainer = <div className="sub-container">
+                    <SubmissionView/>
+                </div>
+            }
+            else{
+                subContainer = <div className="sub-container">
                 {
                     state.assignment.submissions.submissions.map((submission,index)=>(
                         <Submissions
@@ -71,7 +80,10 @@ function Dashboard() {
                         />
                     ))   
                 }
+                {/* <div>;lhhdfghjk</div> */}
             </div>
+            }
+            
         }
     }
     return (

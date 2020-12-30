@@ -2,10 +2,12 @@ import React,{useState} from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import FileBase64 from 'react-file-base64';
 import { createSubmission } from "../redux/assignments/assignmentActions";
+
 function SubmissionUpload() {
     const [file,setFile]=useState("");
     const state = useSelector(state=>state);
     const dispatch = useDispatch();
+
 
     const handleSubmit=()=>{
         var value ={
@@ -16,6 +18,7 @@ function SubmissionUpload() {
             description : state.ui.currentAssignment.description,
         };
         dispatch(createSubmission(value));
+     
     }
     return (
         <div className="submission">

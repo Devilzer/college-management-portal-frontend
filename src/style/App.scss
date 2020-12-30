@@ -263,6 +263,46 @@ body {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-evenly;
+          .submission-view {
+            height: 95%;
+            width: 80%;
+            margin: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            // background-color: #ee9a47;
+            display: flex;
+            flex-direction: column;
+            .title {
+              text-align: center;
+              width: 50%;
+              margin: auto;
+              margin-top: 15px;
+              margin-bottom: 10px;
+            }
+            object {
+              width: 100%;
+              height: 75%;
+              margin-top: 0px;
+            }
+            .mark-feild {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              input {
+                font-size: 20px;
+                outline: none;
+                margin-right: 10px;
+                border: none;
+                border-bottom: 2px solid #4a4b46;
+              }
+              button {
+                background-color: transparent;
+                font-size: 20px;
+                outline: none;
+                border-radius: 25px;
+              }
+            }
+          }
 
           .assignment {
             color: whitesmoke;

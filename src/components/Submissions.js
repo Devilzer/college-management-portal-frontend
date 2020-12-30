@@ -1,16 +1,31 @@
 import React from 'react';
-
+import { useDispatch } from "react-redux";
+import { setCurrentAssignment, setAssignmentPage } from "../redux/ui/uiActions";
 function Submissions(props) {
+    const dispatch = useDispatch();
     var status;
     if(props.submission.marks===""){
-        status = "Not Evaluated";
+        status = <span style={{"color" : 'orange'}}>
+           Not Evaluated
+        </span>
     }
     else{
-        status ="Evaluated";
+        status =<span style={{"color" : 'white'}}>
+        Evaluated
+     </span>;
+    }
+    const handelClick =()=>{
+        if(props.submission.marks===""){
+            dispatch(setAssignmentPage());
+            dispatch(setCurrentAssignment(props.submission));
+        }
+        else{
+            return;
+        }   
     }
     return (
         
-            <div className ="assignment violet">
+            <div className ="assignment violet" onClick={handelClick}>
                     <h2 className="title">
                         {props.submission.title}
                     </h2>
@@ -19,9 +34,7 @@ function Submissions(props) {
                     </p>
                     <div className="details">
                     <p className="deadline">
-                        <span>
-                            {status}
-                        </span>&nbsp;
+                        {status}
                     </p>
                         <p className="teacher">
                             <span>

@@ -4,16 +4,19 @@ import Dashboard from "./Dashboard";
 import { useDispatch, useSelector } from "react-redux";
 import { setMainMenu } from "../redux/ui/uiActions";
 import { logoutUser } from "../redux/user/userActions";
-import {getAllAssignments , getAllSubmissions} from "../redux/assignments/assignmentActions"
+import {getAllAssignments , getAllSubmissions} from "../redux/assignments/assignmentActions";
 function Main() {
+    
     const state = useSelector(state=>state);
     const dispatch = useDispatch();
     const avalue = {
         user : state.user.userType,
         name : state.user.name
     }
+    
     useEffect(()=>dispatch(getAllAssignments()),[dispatch]);
     useEffect(()=>dispatch(getAllSubmissions(avalue)),[dispatch]);
+    
     var button ;
     var subContainer;
     if(state.ui.mainMenu==="dashboard"){

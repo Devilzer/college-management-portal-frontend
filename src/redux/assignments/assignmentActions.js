@@ -37,4 +37,14 @@ export const createSubmission = (value)=> async(dispatch)=>{
     } catch (error) {
         console.log(error);
     }
-}
+};
+
+export const submitMarks = (value)=>async(dispatch)=>{
+    try {
+        const {data} = await axios.post("/assignment/updatemark",value);
+        console.log(data);
+        dispatch({type : "SET_ALL_SUBMISSION",payload:data})      
+    } catch (error) {
+        console.log(error);
+    }
+};
