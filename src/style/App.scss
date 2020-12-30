@@ -263,6 +263,22 @@ body {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-evenly;
+          .submission {
+            // background-color: #ee9a47;
+            color: whitesmoke;
+            border-radius: 10px;
+            height: 300px;
+            width: 45%;
+            // margin-left: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            .title {
+              width: 90%;
+              margin: auto;
+              margin-top: 25px;
+            }
+          }
 
           .assignment {
             color: whitesmoke;

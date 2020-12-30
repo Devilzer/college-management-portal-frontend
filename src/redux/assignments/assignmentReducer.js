@@ -15,6 +15,11 @@ const reducer = (state=initialState, action)=>{
             };
         case "CREATE_SUBMISSION":
             return state;
+        case "SET_ALL_SUBMISSION":
+            return{
+                ...state,
+                submissions : action.payload
+            }
         default: 
             return state;
     }

@@ -19,6 +19,16 @@ export const getAllAssignments = ()=> async(dispatch)=>{
     }
 };
 
+export const getAllSubmissions = (value)=> async(dispatch)=>{
+    try {
+        const {data} =await axios.post("/assignment/getsubmit",value);
+        console.log(data);
+        dispatch({type : "SET_ALL_SUBMISSION",payload:data});
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const createSubmission = (value)=> async(dispatch)=>{
     try {
         const {data} = await axios.post("/assignment/submit",value);
